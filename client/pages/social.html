@@ -7,7 +7,9 @@
       </paper-tabs>
     </core-toolbar>
     <div class="container" layout vertical center>
-      <post-list show="all"></post-list>
+      {{#if showPosts}}
+        <post-list show="all"></post-list>
+      {{/if}}
     </div>
   </core-header-panel>
 </template>
