@@ -7,6 +7,17 @@ Running:
  * Run `bower install` (Bower)
  * Run `mrt install` (Meteorite)
 
+Adding more posts:
+
+```javascript
+postCollection.insert({
+    username: 'Test user', 
+    text: 'all',
+    favorite: false,
+    avatar:'http://linustechtips.com/main/uploads/profile/photo-122199.gif'
+});
+```
+
 Some key points:
 
  * Polymer is installed using Bower and served from the `public/` directory.

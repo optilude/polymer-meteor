@@ -2,14 +2,23 @@
   <core-header-panel>
     <core-toolbar>
       <paper-tabs id="tabs" selected="all" self-end>
-        <paper-tab name="all">ALL</paper-tab>
-        <paper-tab name="favorites">FAVORITES</paper-tab>
+        {{#each getTabs}}
+            <paper-tab name="{{name}}">{{text}}</paper-tab>
+        {{/each}}
       </paper-tabs>
     </core-toolbar>
     <div class="container" layout vertical center>
-      {{#if showPosts}}
-        <post-list show="all"></post-list>
-      {{/if}}
+        <post-list show="all">
+            {{#each getPosts}}
+                <post-card
+                        favorite="{{favorite}}"
+                        on-favorite-tap="">
+                  <img src="{{avatar}}" width="70" height="70">
+                  <h2>{{username}}</h2>
+                  <p>{{text}}</p>
+                </post-card>
+            {{/each}}
+        </post-list>
     </div>
   </core-header-panel>
 </template>
